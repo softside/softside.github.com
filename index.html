@@ -73,11 +73,11 @@
         </script>
     </head>
     <body>
-        <div class="header"><a class="fl mt40 ml20" id="header" href="/">&gt;&gt;&gt;压力很大的BLOG</a> <img id="show_home" class="fl mt30" src="images/home.gif"/></div>
+        <div class="header">
+	</div>
         <div class="content">
             <div id="side" class="fl side">
                 <!--your header image can put here or any thing you wish//-->
-                <img class="fl ml40" src="images/me1-1.jpg"/>
                 <div class="fl mt40 disp">
 		  非专业python程序员<br>
 		  每天被产品经理各种虐
@@ -89,33 +89,17 @@
                 </div>
                 <div id="post-content" class="text">
                     <div id="post-text"></div>
-                    <div class="fr">
-                        <!-- JiaThis Button BEGIN -->
-                        <div id="ckepop">
-                        <span class="jiathis_txt">分享到：</span>
-                        <a class="jiathis_button_tsina">新浪微博</a>
-                        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-                        <a class="jiathis_counter_style"></a>
-                        </div>
-                        <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
-                        <!-- JiaThis Button END -->
-                    </div>
-                    <div class="clear"></div>
-                    <div id="disqus_thread"></div>
-                                 
                 </div>
             </div>
         </div>
     </body>
     <script id="post_list_template" type="text/template">
-        <%_.each(data,function(post){%>
-        <dl>
-           <dt class="h20">
-           <span class="fl"> <a href="index.html?p=<%=post.name%>"><%=post.title%></a></span><span class="fr timestamp mt10"> &gt;发布时间&nbsp;<%=post.date%></span>
+        <%_.EACH(DATA,FUNCTION(POST){%>
+        <DL>
+           <DT CLASS="H20">
+           <SPAN CLASS="FL"> <A HREF="INDEX.HTML?P=<%=POST.NAME%>"><%=POST.TITLE%></A></SPAN><SPAN CLASS="FR TIMESTAMP MT10"><%=post.date%></span>
                <span class="slear"></span>
            </dt>
-           <dd><%=post.disp%></dd>
-           <dd> <div class="fr commend">☆   评论(<a href="index.html?p=<%=post.name%>#disqus_thread"></a>)</div></dd>
        </dl>
        <%});%>
     </script>
