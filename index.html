@@ -60,8 +60,6 @@
             }
 
             $(function(){
-                $("#show_home").hide();
-                $("#header").mousemove(function(){$("#show_home").show()}).mouseout(function(){$("#show_home").hide()});
                 var params=getParameter("p");
                 if(_.isNull(params)){
                     show_index();

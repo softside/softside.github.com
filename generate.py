@@ -7,10 +7,15 @@ blog_date = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
 
 
 def insert_blog(new_blog):
-    json_file = open("list.json",'wr')
+    json_file = open("list.json")
     blog_list = json.load(json_file).get('data')
+    print blog_list
+    json_file.close()
     blog_list.insert(0,new_blog)
+    print blog_list
+#    blog_list.append(new_blog)
     blog_list = {'data':blog_list}
+    json_file = open("list.json",'w')
     json_file.write(json.dumps(blog_list))
     json_file.close()
     print blog_list
@@ -23,8 +28,10 @@ def generate_blog(file_name):
                  'disp':"",
                  'date':blog_date
                  }
+    print new_blog
     return new_blog
-file_name = "generate_blog.txt"
-new_blog =  generate_blog(file_name)
 
-insert_blog(new_blog)
+
+if __name__ == "__main__":
+    json_entry = generate_blog(sys.argv[1])
+    insert_blog(json_entry)
