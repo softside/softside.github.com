@@ -178,10 +178,12 @@ p img.right10 { float: right; margin:0.833em;  }
 .fr {float:right}
 
 .header {
-    height:120px;
+    height:70px;
     width:970px;
+    padding-top:50px;
     margin-left:auto;
     margin-right:auto;
+    text-align:center;
 }
 .header a{
     font:2.5em bold;
@@ -269,5 +271,6 @@ dd{ padding:5px 20px;}
     width:180px;
     min-height:100px;*+height:100%;_height:100px;
     padding:5px;
+    line-height:30px;
 }
 
