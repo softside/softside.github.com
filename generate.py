@@ -10,8 +10,11 @@ def insert_blog(new_blog):
     json_file = open("list.json")
     blog_list = json.load(json_file).get('data')
     json_file.close()
+    print blog_list
     blog_list.insert(0,new_blog)
+    print blog_list
     blog_list = {'data':blog_list}
+    print blog_list
     json_file = open("list.json",'w')
     json.dump(json_file,blog_list)
     json_file.close()
