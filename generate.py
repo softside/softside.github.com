@@ -16,7 +16,8 @@ def insert_blog(new_blog):
     blog_list = {'data':blog_list}
     print blog_list
     json_file = open("list.json",'w')
-    json.dump(json_file,blog_list)
+    json_file.write(json.dumps(blog_list))
+    #json.dump(json_file,blog_list)
     json_file.close()
 
 def generate_blog(file_name):
