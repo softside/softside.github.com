@@ -1,123 +1,122 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link href="styles/a.css" type="text/css" rel="stylesheet" charset="utf-8" />
-        <title>softside#smth</title>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script type="text/javascript" src="underscore-min.js"></script>
-        <script type="text/javascript" src="showdown.js"></script>
-        <script src="highlight.pack.js"></script>
-        <script type="text/javascript">
-            function getParameter(name){ 
-                var search = document.location.search;
-                var pattern = new RegExp("[?&]"+name+"\=([^&]+)", "g");
-                var matcher = pattern.exec(search);
-                var items = null;
-                if(null != matcher){
-                    items = decodeURIComponent(matcher[1]);
-                }
-                return items;
-	        
-            }
-
-            function render_list(datas){
-                var template = _.template($("#post_list_template").html());
-                html=template(datas);
-                $("#list_container").html(html);
-            }
-
-            function show_post(name){
-                $("#list_container").html("");
-                $("#list_container").hide();
-                $("#loading").show();
-                $.get(
-                        "blogs/"+name,
-                        function(data){
-                            var converter = new Showdown.converter();
-                            var html = converter.makeHtml(data);
-                            $("#post-text").html(html);
-                            $("#post-content").show();
-                            $("#loading").hide();
-                            hljs.tabReplace = '    ';
-                            hljs.initHighlighting();
-                        }
-                );
-            }
-
-            function show_index(){
-                $("#loading").show();
-                $("#post-text").html("");
-                $("#post-content").hide();
-                $.getJSON(
-                        "list.json",
-                        function(data){
-                            $("#loading").hide();
-                            $("#list_container").show();
-                            render_list(data);
-                        }
-                    );
-            }
-
-            $(function(){
-                var params=getParameter("p");
-                if(_.isNull(params)){
-                    show_index();
-                }else{
-                    show_post(params);
-                }
-             }
-            );
-        </script>
-    </head>
-    <body>
-      <div class="wrapper">
-        <header>
-                   <h1><a href="/">悲催的web程序员</a></h1>
-                   <p> python emacs </p>
-	</header>
-        <section>
-            <div id="posts" class="posts ml200">
-                <div id="loading" class="loading" style="display:none;"> <img src="images/loading.gif"/> </div>
-                <div  id="list_container">
-                </div>
-                <div id="post-content" class="text">
-                    <div id="post-text"></div>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="styles/a.css" type="text/css" rel="stylesheet" charset="utf-8" />
+    <title>softside#smth</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="underscore-min.js"></script>
+    <script type="text/javascript" src="showdown.js"></script>
+    <script src="highlight.pack.js"></script>
+    <script type="text/javascript">
+      function getParameter(name){ 
+      var search = document.location.search;
+      var pattern = new RegExp("[?&]"+name+"\=([^&]+)", "g");
+      var matcher = pattern.exec(search);
+      var items = null;
+      if(null != matcher){
+      items = decodeURIComponent(matcher[1]);
+      }
+      return items;
       
-                    <!-- Duoshuo Comment BEGIN -->
-                    <div class="ds-thread"></div>
-                    <script type="text/javascript">
-                      var duoshuoQuery = {short_name:"chongsifang"};
-                      (function() {
-                      var ds = document.createElement('script');
-                      ds.type = 'text/javascript';ds.async = true;
-                      ds.src = 'http://static.duoshuo.com/embed.js';
-                      ds.charset = 'UTF-8';
-                      (document.getElementsByTagName('head')[0] ||
-                      document.getElementsByTagName('body')[0]).appendChild(ds);
-                      })();
-                      </script>
-                    <!-- Duoshuo Comment END -->
+      }
 
-                </div>
-            </div>
-         </section>
-        </div>
-        <footer>
-          <p>Project maintained
-          by <a href="http://github.com/softside/">softside</a></p>
-          <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-	</footer>
+      function render_list(datas){
+      var template = _.template($("#post_list_template").html());
+      html=template(datas);
+      $("#list_container").html(html);
+      }
 
-    </body>
-    <script id="post_list_template" type="text/template">
-        <%_.each(data,function(post){%>
-        <dl>
-           <dt class="h20">
-           <span class="fl"> <a href="index.html?p=<%=post.name%>"><%=post.title%></a></span><span class="fr timestamp mt10"> &gt;&nbsp;<%=post.date%></span>
-               <span class="slear"></span>
-           </dt>
-       </dl>
-       <%});%>
+      function show_post(name){
+      $("#list_container").html("");
+      $("#list_container").hide();
+      $("#loading").show();
+      $.get(
+      "blogs/"+name,
+      function(data){
+      var converter = new Showdown.converter();
+      var html = converter.makeHtml(data);
+      $("#post-text").html(html);
+      $("#post-content").show();
+      $("#loading").hide();
+      hljs.tabReplace = '    ';
+      hljs.initHighlighting();
+      }
+      );
+      }
+
+      function show_index(){
+      $("#loading").show();
+      $("#post-text").html("");
+      $("#post-content").hide();
+      $.getJSON(
+      "list.json",
+      function(data){
+      $("#loading").hide();
+      $("#list_container").show();
+      render_list(data);
+      }
+      );
+      }
+
+      $(function(){
+      var params=getParameter("p");
+      if(_.isNull(params)){
+      show_index();
+      }else{
+      show_post(params);
+      }
+      }
+      );
     </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="/">悲催的web程序员</a></h1>
+        <p> python emacs </p>
+      </header>
+      <section>
+        <div id="posts" class="posts ml200">
+          <div id="loading" class="loading" style="display:none;"> <img src="images/loading.gif"/> </div>
+          <div  id="list_container">
+          </div>
+          <div id="post-content" class="text">
+            <div id="post-text"></div>
+            <!-- Duoshuo Comment BEGIN -->
+            <div class="ds-thread"></div>
+            <script type="text/javascript">
+              var duoshuoQuery = {short_name:"softside"};
+              (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+              })();
+            </script>
+            <!-- Duoshuo Comment END -->
+
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained
+        by <a href="http://github.com/softside/">softside</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+
+  </body>
+  <script id="post_list_template" type="text/template">
+    <%_.each(data,function(post){%>
+    <dl>
+      <dt class="h20">
+        <span class="fl"> <a href="index.html?p=<%=post.name%>"><%=post.title%></a></span><span class="fr timestamp mt10"> &gt;&nbsp;<%=post.date%></span>
+        <span class="slear"></span>
+      </dt>
+    </dl>
+    <%});%>
+  </script>
 </html>
