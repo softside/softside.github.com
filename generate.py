@@ -16,9 +16,20 @@ def insert_blog(new_blog):
     blog_list = {'data':blog_list}
     print blog_list
     json_file = open("list.json",'w')
-    json_file.write(json.dumps(blog_list))
+    #json_file.write(json.dumps(blog_list))
+    json.dump(blog_list, json_file, sort_keys=True, indent=4)
     #json.dump(json_file,blog_list)
     json_file.close()
+
+def formate_json():
+    json_file = open("list.json")
+    blog_list = json.load(json_file)
+    json_file.close()
+    json_file = open("list.json",'w')
+    json.dump(blog_list, json_file, sort_keys=True, indent=4)
+    json_file.close()
+    return "Y"
+
 
 def generate_blog(file_name):
     blog_file = blog_path+file_name
@@ -32,5 +43,8 @@ def generate_blog(file_name):
 
 
 if __name__ == "__main__":
-    json_entry = generate_blog(sys.argv[1])
-    insert_blog(json_entry)
+    ###########################################
+    # json_entry = generate_blog(sys.argv[1]) #
+    # insert_blog(json_entry)                 #
+    ###########################################
+    formate_json()
