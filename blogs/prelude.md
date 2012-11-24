@@ -6,7 +6,7 @@ prelude-强大灵活简单易用的emacs配置包
 
 这是什么
 -----
-这是一个emacs的配置文件，以前是.emacs文件放在home目录下的，最近的都是放在一个叫.emacs.d的目录下(prelude就是这个.emacs.d)
+这是一个emacs的配置文件，以前版本的.emacs文件放在home目录下的，emacs24的都是放在一个叫.emacs.d的目录下(prelude就是这个.emacs.d)
 
 
 emacs经历
