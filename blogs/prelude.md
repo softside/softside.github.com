@@ -20,24 +20,33 @@ prelude
 
 怎么用
 ----
-1.fork prelude  
+1.fork prelude
 
     git clone git@github.com:newlife/prelude.git
     ln -s prelude .emacs.d
 
-2.create personal  
-    
-3.创建.gitsubmodule  
-    
+2.add remote
+
+    git remote add upstream https://github.com/bbatsov/prelude.git
+
+当remote的包有更新的时候可以
+
+    git fetch upstream
+    git merge upstream/master
+
+2.create personal
+
+3.创建.gitsubmodule
+
     [submodule "personal"]
             path = personal
             url = git@github.com:newlife/emacs-prelude-personal.git
 
-4.更新personal  
-    
+4.更新personal
+
     git submodule init
     git submodule update
-    
+4.
 ms step3也可以用 ***git submodule add ***  来实现。
 
 
