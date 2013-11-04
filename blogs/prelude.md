@@ -1,17 +1,6 @@
 prelude-强大灵活简单易用的emacs配置包
 ====
 
-
----
-layout: post
-title: "Ruby与她的正则表达式(正则部分)"
-description: "脱离了Ruby Api的正则表达式的基础知识，着重的介绍锚点，集合，分组，重复，选择等正则表达式的组成成分"
-category: Ruby
-tags: [正则表达式]
----
-
-
-
 ***
 强烈推荐[prelude](https://github.com/bbatsov/prelude)
 

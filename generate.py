@@ -18,7 +18,6 @@ def insert_blog(new_blog):
     json_file = open("list.json",'w')
     #json_file.write(json.dumps(blog_list))
     json.dump(blog_list, json_file, sort_keys=True, indent=4)
-    #json.dump(json_file,blog_list)
     json_file.close()
 
 def formate_json():

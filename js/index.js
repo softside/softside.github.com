@@ -27,8 +27,6 @@ function show_post(name){
             $("#post-text").html(html);
             $("#post-content").show();
             $("#loading").hide();
-            hljs.tabReplace = '    ';
-            hljs.initHighlighting();
         }
     );
 }
