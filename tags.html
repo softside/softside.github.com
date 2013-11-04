@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="styles/a.css" type="text/css" rel="stylesheet" charset="utf-8" />
+    <title>softside#smth</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/handlebars-v1.1.0.js"></script>
+    <script type="text/javascript" src="js/showdown.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script src="js/tag.js"></script>
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="/">悲催的web程序员</a></h1>
+        <p> python emacs </p>
+      </header>
+      <section>
+        <div id="posts" class="posts ml200">
+          <div id="loading" class="loading" style="display:none;"> <img src="images/loading.gif"/> </div>
+          <div  id="list_container">
+          </div>
+          <div id="post-content" class="text">
+            <div id="post-text"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained
+        by <a href="http://github.com/softside/">softside</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+  <script id="post_list_template" type="text/x-handlebars-template">
+    {{#data}}
+    <dl>
+      <dt class="h20">
+        <span class="fl"> <a href="index.html?p=<%=post.name%>">{{name}}</a></span><br>
+        {{#each post_list}}
+        <span class="fl"> <a href="index.html?p=<%=post.name%>">{{this}}</a></span>
+        {{/each}}
+        <span class="slear"></span>
+      </dt>
+    </dl>
+    {{/data}}
+
+  </script>
+
+  </body>
+
+</html>
