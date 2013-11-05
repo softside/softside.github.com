@@ -19,7 +19,7 @@ body {
 }
 
 .wrapper {
-  width: 640px;
+  width: 800px;
   margin: 0 auto;
   background: #DEDEDE;
   -moz-border-radius: 8px;
@@ -270,7 +270,7 @@ th, td {
 
 dt {
   color: #222;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 th {
@@ -360,4 +360,7 @@ footer p + p {
   header p.view a small:before {
     content: 'at http://github.com/';
   }
+}
+.mt10{
+    font-size:8px;
 }

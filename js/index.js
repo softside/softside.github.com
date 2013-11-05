@@ -9,40 +9,27 @@ function getParameter(name){
     return items;
 }
 
-function render_list(data){
-    var source = $("#post_list_template").html();
-    var template = Handlebars.compile(source)
-    $("#list_container").html(template(data));
-}
 
 function show_post(name){
     $("#list_container").html("");
     $("#list_container").hide();
     $("#loading").show();
-    $.get(
-        "blogs/"+name,
-        function(data){
-            var converter = new Showdown.converter();
-            var html = converter.makeHtml(data);
-            $("#post-text").html(html);
-            $("#post-content").show();
-            $("#loading").hide();
-        }
-    );
+    show_tag();
+    $.get("blogs/"+name,function(data){
+        var converter = new Showdown.converter();
+        var html = converter.makeHtml(data);
+        $("#post-text").html(html);
+        $("#post-content").show();
+        $("#loading").hide();
+    });
 }
 
 function show_index(){
     $("#loading").show();
     $("#post-text").html("");
     $("#post-content").hide();
-    $.getJSON(
-        "list.json",
-        function(data){
-            $("#loading").hide();
-            $("#list_container").show();
-            render_list(data);
-        }
-    );
+    show_tag();
+    show_list();
 }
 
 $(function(){
@@ -52,5 +39,4 @@ $(function(){
     }else{
         show_post(params);
     }
-}
- );
+});

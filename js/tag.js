@@ -49,10 +49,10 @@ function show_index(){
 
 $(function(){
     var params=getParameter("p");
+    render_tag_list();
     if(_.isNull(params)){
         show_index();
     }else{
         show_post(params);
     }
-}
- );
+});

@@ -8,4 +8,4 @@ data = {"data":
         ]
     }
 json_file = open("tag.json",'w')
-json.dump(data,json_file,sort_keys=True)
+json.dump(data,json_file,sort_keys=True,indent=4)

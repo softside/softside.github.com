@@ -8,13 +8,14 @@
     <script type="text/javascript" src="js/underscore-min.js"></script>
     <script type="text/javascript" src="js/showdown.js"></script>
     <script src="js/handlebars-v1.1.0.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/index.js"></script>
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1><a href="/">悲催的web程序员</a></h1>
-        <p> python emacs </p>
+        <p id="tag_list"></p>
       </header>
       <section>
         <div id="posts" class="posts ml200">
@@ -53,10 +54,16 @@
     {{#each data}}
     <dl>
       <dt class="h20">
-        <span class="fl"> <a href="index.html?p={{this.name}}">{{this.title}}</a></span><span class="fr timestamp mt10"> &gt;&nbsp;{{this.date}}</span>
+        <span class="fl"> <a href="index.html?p={{this.name}}">{{this.title}}</a></span><span class="fr timestamp mt10"> {{prettifyDate  this.date}}</span>
         <span class="slear"></span>
       </dt>
     </dl>
     {{/each}}
   </script>
+  <script id="tag_list_template" type="text/x-handlebars-template">
+    {{#each data}}
+    <a href="/tags.html?tag={{this.name}}">{{this.name}}</a>
+    {{/each}}
+  </script>
+
 </html>
