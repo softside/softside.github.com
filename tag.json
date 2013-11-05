@@ -12,6 +12,18 @@
             "post_list": [
                 "hello.md"
             ]
+        }, 
+        {
+            "name": "lisp", 
+            "post_list": [
+                "elisp.md"
+            ]
+        }, 
+        {
+            "name": "python", 
+            "post_list": [
+                "function_argument.md"
+            ]
         }
     ]
 }
