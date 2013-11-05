@@ -2,6 +2,19 @@ Handlebars.registerHelper("prettifyDate", function(timestamp) {
     return timestamp.slice(0,10);
 });
 
+function getParameter(name){
+    var search = document.location.search;
+    var pattern = new RegExp("[?&]"+name+"\=([^&]+)", "g");
+    var matcher = pattern.exec(search);
+    var items = null;
+    if(null != matcher){
+        items = decodeURIComponent(matcher[1]);
+    }
+    return items;
+}
+
+
+
 function show_tag(){
     $("#tag_list").html("");
     $.get("tag.json",function(data){
@@ -11,7 +24,6 @@ function show_tag(){
 function render_tag_list(data){
     var source = $("#tag_list_template").html();
     var template = Handlebars.compile(source)
-    console.log(template)
     $("#tag_list").html(template(data));
 }
 
@@ -29,3 +41,7 @@ function show_list(){
         render_list(data);
     });
 }
+
+$(function(){
+    show_tag();
+});

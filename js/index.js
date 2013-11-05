@@ -1,15 +1,3 @@
-function getParameter(name){
-    var search = document.location.search;
-    var pattern = new RegExp("[?&]"+name+"\=([^&]+)", "g");
-    var matcher = pattern.exec(search);
-    var items = null;
-    if(null != matcher){
-        items = decodeURIComponent(matcher[1]);
-    }
-    return items;
-}
-
-
 function show_post(name){
     $("#list_container").html("");
     $("#list_container").hide();
@@ -28,7 +16,6 @@ function show_index(){
     $("#loading").show();
     $("#post-text").html("");
     $("#post-content").hide();
-    show_tag();
     show_list();
 }
 

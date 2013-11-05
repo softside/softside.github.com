@@ -1,58 +1,36 @@
-function getParameter(name){
-    var search = document.location.search;
-    var pattern = new RegExp("[?&]"+name+"\=([^&]+)", "g");
-    var matcher = pattern.exec(search);
-    var items = null;
-    if(null != matcher){
-        items = decodeURIComponent(matcher[1]);
-    }
-    return items;
-}
-
-function render_list(data){
+function render_tag_item_list(data){
     var source = $("#post_list_template").html();
     var template = Handlebars.compile(source)
     $("#list_container").html(template(data));
 }
 
-function show_post(name){
-    $("#list_container").html("");
-    $("#list_container").hide();
-    $("#loading").show();
-    $.get(
-        "blogs/"+name,
-        function(data){
-            var converter = new Showdown.converter();
-            var html = converter.makeHtml(data);
-            $("#post-text").html(html);
-            $("#post-content").show();
-            $("#loading").hide();
-            hljs.tabReplace = '    ';
-            hljs.initHighlighting();
-        }
-    );
-}
 
-function show_index(){
+function show_all_tags(){
     $("#loading").show();
-    $("#post-text").html("");
-    $("#post-content").hide();
-    $.getJSON(
-        "tag.json",
-        function(data){
-            $("#loading").hide();
-            $("#list_container").show();
-            render_list(data);
-        }
-    );
+    $.getJSON("tag.json",function(data){
+        $("#loading").hide();
+        $("#list_container").show();
+        render_tag_item_list_list(data);
+    });
+}
+function show_tag_item(params){
+    $("#loading").show();
+    $.getJSON("tag.json",function(data){
+        var result;
+        $("#loading").hide();
+        result = data.data.filter(function(node){return node.name==params;});
+        node = result[0];
+        $("#list_container").show();
+        node = {'data':[node]};
+        render_tag_item_list(node);
+    });
 }
 
 $(function(){
-    var params=getParameter("p");
-    render_tag_list();
+    var params=getParameter("tag");
     if(_.isNull(params)){
-        show_index();
+        show_all_tags();
     }else{
-        show_post(params);
+        show_tag_item(params);
     }
 });
