@@ -2,7 +2,6 @@ import os, sys
 import json
 from datetime import datetime
 
-
 pwd = os.getcwd()
 blog_path = pwd+"/blogs/"
 blog_date = datetime.now().strftime("%Y/%m/%d")
@@ -22,8 +21,9 @@ def generate_blog(file_name):
     blog_file = blog_path+file_name
     blog_title = open(blog_file).readline()
     new_blog = {'name':file_name,
-                 'title':blog_title,
-                 'date':blog_date
+                'title':blog_title,
+                'date':blog_date,
+                'tag':[]
                  }
     return new_blog
 
