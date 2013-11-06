@@ -54,15 +54,15 @@
     {{#each data}}
     <dl>
       <dt class="h20">
-        <span class="fl"> <a href="index.html?p={{this.name}}">{{this.title}}</a></span><span class="fr timestamp mt10"> {{prettifyDate  this.date}}</span>
+        <span class="fl"> <a href="index.html?p={{this.name}}">{{this.title}}</a></span><span class="fr timestamp mt10"> {{this.date}}</span>
         <span class="slear"></span>
       </dt>
     </dl>
     {{/each}}
   </script>
   <script id="tag_list_template" type="text/x-handlebars-template">
-    {{#each data}}
-    <a href="/tags.html?tag={{this.name}}">{{this.name}}</a>
+    {{#each tags}}
+    <a href="/tags.html?tag={{this}}">{{this}}</a>
     {{/each}}
   </script>
 

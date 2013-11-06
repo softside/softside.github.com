@@ -35,22 +35,22 @@
       <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
     </footer>
   <script id="post_list_template" type="text/x-handlebars-template">
-    {{#data}}
+
     <dl>
+      <h3>{{name}}</h3>
       <dt class="h20">
-        <span class="fl"> {{name}}</span><br>
-        {{#each post_list}}
-        <span class="fl"> <a href="index.html?p={{this}}">{{this}}</a></span>
+        {{#each data}}
+        <span class="fl"> <a href="index.html?p={{this.name}}">{{this.title}}</a></span>
         {{/each}}
         <span class="slear"></span>
       </dt>
     </dl>
-    {{/data}}
+
 
   </script>
   <script id="tag_list_template" type="text/x-handlebars-template">
     {{#each data}}
-    <a href="/tags.html?tag={{this.name}}">{{this.name}}</a>
+    <a href="/tags.html?tag={{this.name}}">{{this.title}}</a>
     {{/each}}
   </script>
 

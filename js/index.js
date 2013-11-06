@@ -2,7 +2,6 @@ function show_post(name){
     $("#list_container").html("");
     $("#list_container").hide();
     $("#loading").show();
-    show_tag();
     $.get("blogs/"+name,function(data){
         var converter = new Showdown.converter();
         var html = converter.makeHtml(data);
@@ -16,7 +15,17 @@ function show_index(){
     $("#loading").show();
     $("#post-text").html("");
     $("#post-content").hide();
-    show_list();
+    $.getJSON("list.json",function(data){
+        console.log(data);
+        $("#loading").hide();
+        $("#list_container").show();
+        tags = data['tags'];
+        posts = data['data'];
+        console.log(tags);
+        render_tag_list(tags);
+        render_list(posts);
+    });
+
 }
 
 $(function(){
