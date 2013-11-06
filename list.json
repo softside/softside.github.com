@@ -3,9 +3,7 @@
         {
             "date": "2012/11/22 03:00:51",
             "name": "prelude.md",
-            "tags": [
-                "sss"
-            ],
+            "tags": ["sss"],
             "title": "prelude-\u5f3a\u5927\u7075\u6d3b\u7b80\u5355\u6613\u7528\u7684emacs\u914d\u7f6e\u5305\n"
         },
         {
@@ -13,18 +11,6 @@
             "name": "tmux-basic.md",
             "tags": [],
             "title": "\u5f00\u59cb\u4f7f\u7528tmux\n"
-        },
-        {
-            "date": "2012/08/03 01:05:05",
-            "name": "jekyll.md",
-            "tags": [],
-            "title": "\u6298\u817ejekyll \n"
-        },
-        {
-            "date": "2012/08/02 01:24:11",
-            "name": "theme.txt",
-            "tags": [],
-            "title": "\u66f4\u6362\u4e86\u65b0\u7684theme\n"
         },
         {
             "date": "2012/03/18 01:22:51",
@@ -37,24 +23,6 @@
             "name": "generate_blog.txt",
             "tags": ["python"],
             "title": "\u81ea\u52a8\u751f\u6210json\u6587\u4ef6\n"
-        },
-        {
-            "date": "2012/03/16 23:23:26",
-            "name": "markdown_practise.txt",
-            "tags": ["emacs"],
-            "title": "A First Level Header\n"
-        },
-        {
-            "date": "2012/03/16 23:01:10",
-            "name": "markdown_samples.txt",
-            "tags": ["markdown"],
-            "title": "Markdown references...\n"
-        },
-        {
-            "date": "2012/03/16 22:48:27",
-            "name": "readme.txt",
-            "tags": ["readme"],
-            "title": "Readme for the pure javascript blog system\n"
         }
     ],
     "tags": [
