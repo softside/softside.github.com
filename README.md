@@ -1,1 +1,1 @@
-./blogs/about_this.md
+blogs/generate_blog.txt
