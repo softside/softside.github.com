@@ -1,4 +1,5 @@
-###我学rails
+我学rails
+###
 
 *对于一个用了多年django的人来说，学rails自然就和django对比。
 

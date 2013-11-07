@@ -1,10 +1,17 @@
 {
     "data": [
         {
+            "date": "2013/11/07", 
+            "name": "rails.md", 
+            "tags": [
+                "rails"
+            ], 
+            "title": "\u6211\u5b66rails\n"
+        }, 
+        {
             "date": "2012/11/22 03:00:51", 
             "name": "prelude.md", 
             "tags": [
-                "sss", 
                 "emacs"
             ], 
             "title": "prelude-\u5f3a\u5927\u7075\u6d3b\u7b80\u5355\u6613\u7528\u7684emacs\u914d\u7f6e\u5305\n"
@@ -20,7 +27,9 @@
         {
             "date": "2012/03/18 01:22:51", 
             "name": "javascript.txt", 
-            "tags": [], 
+            "tags": [
+                "js"
+            ], 
             "title": "\u8ba9\u6211\u60c6\u6005\u767e\u8f6c\u7684javascript\n"
         }, 
         {
@@ -36,6 +45,8 @@
         "emacs", 
         "python", 
         "javascript", 
-        "tmux"
+        "tmux", 
+        "rails", 
+        "js"
     ]
 }
