@@ -13,7 +13,6 @@ function show_tag_item(params){
         result = data.data.filter(function(node){return _.contains(node.tags,params);});
         $("#list_container").show();
         node = {'data':result,'name':params};
-        console.log(node)
         render_tag_item_list(node);
     });
 }
