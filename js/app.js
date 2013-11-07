@@ -22,3 +22,10 @@ function render_list(data){
     console.log(data);
     $("#list_container").html(template({'data':data}));
 }
+$(function(){
+    $.getJSON("list.json",function(data){
+        tags = data['tags'];
+        render_tag_list(tags);
+    });
+
+});

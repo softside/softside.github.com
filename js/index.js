@@ -16,12 +16,10 @@ function show_index(){
     $("#post-text").html("");
     $("#post-content").hide();
     $.getJSON("list.json",function(data){
-        console.log(data);
         $("#loading").hide();
         $("#list_container").show();
         tags = data['tags'];
         posts = data['data'];
-        console.log(tags);
         render_tag_list(tags);
         render_list(posts);
     });
