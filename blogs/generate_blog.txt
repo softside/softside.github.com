@@ -1,20 +1,33 @@
-自动生成json文件
-==================
+关于这个blog
+=====
 
+github pages是个好东西。之前尝试过一些jekyll等等的一些东西，用起来太复杂太麻烦了。
 
-***
+基本[https://github.com/ipconfiger/jsloger](jsloger),修改了模板，增加了tag的功能，加了脚本，我本来给源项目提交过 pull request，后来这个原作者去用一个rails的东西，
 
-目标，根据blogs目录下的文件自动生成list.json文件。
+简单介绍下
+----
 
+基本就是javascript的,用了jquery,showdown,underscore,handlebars。
 
-如何使用
----------------------------
+1 用文件来存储文章内容。
 
-用于每次完成一篇blog(sample.txt)后，执行该文件
+2 用json文件来保存meta信息：文章标题，时间，tag。看着很少的东西啊，写起来还是很费劲的哈
+
+3 其实这个underscore可以不用的，就是jquery也可以完成工作，showdown是必须的，用来显示文章，handlebars可以用jquery的模板代替，我不喜欢那个语法，用了handlebars。所以只要jquery和showdown就可以了，还是强大的jquery啊
+
+怎么用
+---
+
+1，写一篇文章，记得要用md格式，然后第一行是标题，其他的随意。文件保存在blogs目录，名字随意。
+
+2，回主目录，执行该文件
 
     python generate.py sample.txt
 
-工作流程
--------------------------
+3，增加tag
 
-根据接收的参数，读取文件，找到文章的title，构建目标json数据包，将该数据包插入到list.json文件中
+    python add_tag.py sample.txt tag1 tag2
+
+
+然后就可以了。
