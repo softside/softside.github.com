@@ -15,7 +15,15 @@
             "tags": [
                 "markdown"
             ], 
-            "title": "<< [\u8bbf\u95ee Wow!Ubuntu](http://wowubuntu.com)\n"
+            "title": "markdown book\n"
+
+            "date": "2013/12/12", 
+            "name": "rest-throttling.md", 
+            "tags": [
+                "python", 
+                "rest"
+            ], 
+            "title": "django-rest-framework/rest_framwork/throttling.py\n"
         }, 
         {
             "date": "2013/11/11", 
@@ -76,5 +84,6 @@
         "markdown", 
         "pdf", 
         "mac"
+        "rest"
     ]
 }

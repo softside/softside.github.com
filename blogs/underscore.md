@@ -50,7 +50,7 @@ JavaScript这个悲催的语言，在苦苦熬了这么多年以后，终于迎�
         }
     };
 
-这是each的实现，如果js版本中支持forEach直接用forEach；不支持的话：首先处理array，这个array的判断很有意思,如果obj不是array，那么obj.length是undefined，而+obj.length是NAN。有人说是为了省5个byte，相对(typeof a.length=='number')，[http://stackoverflow.com/questions/9188998/obj-length-obj-length-in-javascript](这里)，还可以更好的压缩。然后是处理Object的部分,这个还是有必要的，对于对象的遍历，因为{}这个对象没有类似forEach的方法。Underscore提供的大部分类似的函数，我们在使用的时候都要提供一个必要的iterator函数，这个函数接受一个参数，表示当前遍历的对象的item，在这个回调函数做我们需要的处理。
+这是each的实现，如果js版本中支持forEach直接用forEach；不支持的话：首先处理array，这个array的判断很有意思,如果obj不是array，那么obj.length是undefined，而+obj.length是NAN。有人说是为了省5个byte，相对(typeof a.length=='number')，[这里](http://stackoverflow.com/questions/9188998/obj-length-obj-length-in-javascript)，还可以更好的压缩。然后是处理Object的部分,这个还是有必要的，对于对象的遍历，因为{}这个对象没有类似forEach的方法。Underscore提供的大部分类似的函数，我们在使用的时候都要提供一个必要的iterator函数，这个函数接受一个参数，表示当前遍历的对象的item，在这个回调函数做我们需要的处理。
 
 #### keys
 在each中，处理Object部分的时候，`var keys=_keys(obj)`,作用是返回Object中的key。
