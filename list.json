@@ -3,13 +3,18 @@
         {
             "date": "2013/12/25", 
             "name": "md.md", 
-            "tags": [], 
-            "title": "<< [\u8bbf\u95ee Wow!Ubuntu](http://wowubuntu.com)\n"
+            "tags": [
+                "markdown"
+            ], 
+            "title": "markdown-book\n"
         }, 
         {
             "date": "2013/12/25", 
             "name": "remove_pdf_margin.md", 
-            "tags": [], 
+            "tags": [
+                "mac", 
+                "pdf"
+            ], 
             "title": "pdf\u5207\u8fb9\n"
         }, 
         {
@@ -77,6 +82,9 @@
         "tmux", 
         "rails", 
         "js", 
-        "rest"
+        "rest", 
+        "mac", 
+        "pdf", 
+        "markdown"
     ]
 }
