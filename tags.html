@@ -40,8 +40,10 @@
       <h3>{{name}}</h3>
       <dt class="h20">
         {{#each data}}
+          <p>
         <span class="fl"> <a href="index.html?p={{this.name}}">{{this.title}}</a></span>
         <span class="fr timestamp mt10"> {{this.date}}</span>
+        </p>
         {{/each}}
         <span class="slear"></span>
       </dt>
