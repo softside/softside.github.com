@@ -1,6 +1,14 @@
 {
     "data": [
         {
+            "date": "2014/02/23", 
+            "name": "useful_functions_in_python.md", 
+            "tags": [
+                "python"
+            ], 
+            "title": "\u8bb0\u5f55\u4e00\u4e9b\u6709\u7528\u4f46\u662f\u4e0d\u5e38\u7528\u7684\u7684\u51fd\u6570\n"
+        }, 
+        {
             "date": "2014/01/08", 
             "name": "peewee.md", 
             "tags": [

@@ -29,6 +29,10 @@ def generate_blog(file_name):
                  }
     return new_blog
 
+def usage():
+    
+    sys.exit(' ')
+
 
 if __name__ == "__main__":
     json_entry = generate_blog(sys.argv[1]) #
