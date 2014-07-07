@@ -1,6 +1,14 @@
 {
     "data": [
         {
+            "date": "2014/07/07", 
+            "name": "master.md", 
+            "tags": [
+                "saltstack"
+            ], 
+            "title": "# saltstack\u6e90\u7801\u5206\u6790\n"
+        }, 
+        {
             "date": "2014/02/23", 
             "name": "useful_functions_in_python.md", 
             "tags": [
@@ -103,6 +111,7 @@
         "mac", 
         "pdf", 
         "markdown", 
-        "orm"
+        "orm", 
+        "saltstack"
     ]
 }
