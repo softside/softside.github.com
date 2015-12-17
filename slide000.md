@@ -1,6 +1,6 @@
-brew install node
-npm install -g reveal-md
-reveal-md
+<!-- brew install node -->
+<!-- npm install -g reveal-md -->
+<!-- reveal-md -->
 
 #分享
 
