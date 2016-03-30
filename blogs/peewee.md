@@ -48,17 +48,7 @@ Question 1,如何取得用户定义的信息？
     {'__module__': 'person', 'birthday': <peewee.DateField object at 0x10342b3d0>, 'is_relative': <peewee.BooleanField object at 0x10342b4d0>, 'name': <peewee.CharField object at 0x10342b390>, 'Meta': <class my-test.Meta at 0x10340cb48>}
 
 到这里是不是清楚了，在我们定义示例代码的时候，我们可以通过Person.__dict__获取需要信息。
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
+### ORM
+orm试图解决什么问题？
+1，方便的查询
+2，最后结果的包装

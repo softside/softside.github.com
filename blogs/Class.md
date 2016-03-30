@@ -1,4 +1,4 @@
-#### Classes and Object-oriented Programming
+<#### Classes and Object-oriented Programming
 类是创建新对象的机制，本章包含类的各种细节，但是不是一个面向对象编程和设计的参考。我们假定读者有其他编程语言（c或者java）数据结构和面向对象编程的经验。
 #class语句
 类顶了一堆属性，这些属性被对象实例共享。类实际上是函数、变量和属性的集合。
