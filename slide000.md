@@ -100,3 +100,4 @@ from TED
 * 少些代码
 
 
+if k2 in d.get(k1, {}):
